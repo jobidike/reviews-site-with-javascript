@@ -1,4 +1,4 @@
-package reviewssitefullstack;
+package reviewssitewithjavascript;
 
 import java.util.Arrays;
 import java.util.HashSet;

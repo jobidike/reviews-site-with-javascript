@@ -1,4 +1,6 @@
-package reviewssitefullstack;
+package reviewssitewithjavascript;
+
+import java.util.Set;
 
 //import java.util.List;
 
@@ -69,12 +71,17 @@ public class ReviewController {
 	}
 
 	@RequestMapping("/remove-tag")
-	public String removeTag(@RequestParam Long id, @RequestParam Long reviewId) {
-		Tag deleteTag = tagRepo.findOne(id);
-		Review review = reviewRepo.findOne(reviewId);
-		review.removeTag(deleteTag);
-		reviewRepo.save(review);
-		return "redirect:/review?id=" + reviewId;
+	public String removeTag(@RequestParam(value = "id") Long id, String tagName, Model model) {
+		Tag deleteTag = tagRepo.findByTagName(tagName);
+		if (deleteTag != null) {
+			Review review = reviewRepo.findOne(id);
+			Set<Tag> removeTag = review.getTag();
+			if (removeTag.contains(deleteTag)) {
+				review.removeTag(deleteTag);
+			}
+			reviewRepo.save(review);
+		}
+		return "redirect:/review?id=" + id;
 	}
 
 } // close

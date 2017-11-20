@@ -1,4 +1,4 @@
-package reviewssitefullstack;
+package reviewssitewithjavascript;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -9,7 +9,7 @@
 </head>
 
 <body class="img">
-	<!-- <h3><a href="/tags"> Tags</a></h3> -->
+
 	<div class="container">
 
 		<header>
@@ -32,28 +32,34 @@
 				Category</a>
 
 		</div>
-		<div class="reviews">
+		<div class="forms">
 			<form method="POST">
-				<label>Enter a new tag name: </label>
-				 <input name="id" type="hidden" th:value="${review.id}"/>
-				 <input type="text" name="tagName" />
+				<label>Enter a new tag name: </label> <input name="id" type="hidden"
+					th:value="${review.id}" /> <input type="text" name="tagName" />
 				<button th:formaction="@{/add-tag}">add</button>
 			</form>
 
 			<form method="POST">
-				<label>Enter tag name to remove: </label>
-				<input name="reviewId" type="hidden" th:value="${review.id}"/>
-					<section th:each="tag: ${review.tag}">
-						<a th:href="@{/tag(id=${tag.id})}" th:text="${tag.tagName}"></a>
-				<button name="id" th:value="${tag.id}" th:formaction="@{/remove-tag}">delete</button></section>
-				<!-- <input type="text" name="tagName" />
-				<button th:formaction="@{/remove-tag}">delete</button> -->
+				<input name="id" type="hidden" th:value="${review.id}" /> <label>Enter
+					tag name to remove:</label> <input type="text" name="tagName" />
+				<button th:formaction="@{/remove-tag}">delete</button>
 			</form>
+
+
+			<div id="comments">
+				<div class="addComment">
+					<label>Add a comment to this review: </label> <input
+						id="commentArea" type="text" placeholder="Add A Comment" /> <input
+						type="button" value="Add Comment" id="newComment" />
+				</div>
+			</div>
+			<!-- onfocus="this.value='';" -->
 
 		</div>
 		<footer>
-			<h4>Copyright 2017 Jaimie Obidike</h4>
+			<h4 class="copyright">&copy; 2017 JO.</h4>
 		</footer>
 	</div>
+	<script src="/js/app.js"></script>
 </body>
 </html>

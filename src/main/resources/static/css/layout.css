@@ -26,6 +26,11 @@
 	padding: 25px;
 	grid-gap: 50px;
 }
+.forms {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
 
 .main {
 	align-items: flex-start;
@@ -42,5 +47,7 @@
 footer {
 	display: flex;
 	justify-content: flex-end;
-	padding-right: 45%;
+	padding-right: 47%;
+	
 }
+

@@ -23,6 +23,37 @@
 	background-opacity: 0.5;
 }
 
+.alert {
+	padding: 20px;
+	background-color: #f44336; /* Red */
+	color: white;
+	margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+	color: black;
+}
+
+.forms {
+	color: Tomato;
+	font-size: 25px;
+	font: Helvetica;
+	font-weight: bolder;
+}
+
 .main {
 	font-size: 25px;
 	font-weight: bold;
@@ -45,7 +76,7 @@ a:hover {
 }
 
 footer {
-	font-size: 15px;
+	font-size: 20px;
 	font: Helvetica;
 	font-weight: bolder;
 }
